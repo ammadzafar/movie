@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Model\Category;
+use App\Model\Movie;
 use App\Services\Admin\MovieServices;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -15,7 +16,7 @@ class MovieController extends Controller
         $this->movie = $movie;
     }
 
-    public function index()
+    public function create()
     {
         $categories = Category::all();
         return view('admin.movie.create',compact('categories'));
@@ -24,7 +25,24 @@ class MovieController extends Controller
     {
         try {
             $this->movie->store($request);
-            return redirect()->back()->with('success','Movie Created Successfully');
+            return redirect()->route('movie.index')->with('success','Movie Created Successfully');
+        }
+        catch (\Exception $e)
+        {
+            return redirect()->back()->with('error','Something Went Wrong!'.$e->getMessage());
+        }
+    }
+    public function index()
+    {
+        $movies = Movie::all();
+        return view('admin.movie.index',compact('movies'));
+    }
+    public function delete($id)
+    {
+        try {
+            $movie = Movie::findorfail($id);
+            $movie->delete();
+            return redirect()->route('movie.index')->with('success','Movie Deleted Successfully');
         }
         catch (\Exception $e)
         {

@@ -1,4 +1,4 @@
-<footer class="bg-5 bg-overlay-2">
+<footer class="bg-5 bg-overlay-2" {{--style="margin-top: 70px"--}}>
     <!-- Footer Top Area Start -->
     <div class="footer-top ptb-90">
         <div class="container">
@@ -8,7 +8,7 @@
                     <div class="footer-single">
                         <h5>STAY WITH US</h5>
                         <div class="stay-with-content">
-                            <p>It is a long established fact that a good reader on will be distracted by the by readable content of a page when looking at its layout. </p>
+{{--                            <p>It is a long established fact that a good reader on will be distracted by the by readable content of a page when looking at its layout. </p>--}}
                             <div class="subcribe">
                                 <form id="mc-form">
                                     <input autocomplete="off" placeholder="Your E-mail" type="text">
@@ -32,10 +32,10 @@
                         <h5>SERVICES</h5>
                         <div class="footer-menu">
                             <ul>
-                                <li><a href="#">Hire Studio</a></li>
-                                <li><a href="#">Outdoor Spot</a></li>
-                                <li><a href="#">Flexible Space</a></li>
-                                <li><a href="#">Production House Rent</a></li>
+{{--                                <li><a href="#">Hire Studio</a></li>--}}
+{{--                                <li><a href="#">Outdoor Spot</a></li>--}}
+{{--                                <li><a href="#">Flexible Space</a></li>--}}
+{{--                                <li><a href="#">Production House Rent</a></li>--}}
                             </ul>
                         </div>
                     </div>
@@ -47,10 +47,10 @@
                         <h5>IMPORTANT LINK</h5>
                         <div class="footer-menu">
                             <ul>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Terms & Condition</a></li>
-                                <li><a href="#">Pricing Of Filmcity</a></li>
+{{--                                <li><a href="#">About Us</a></li>--}}
+{{--                                <li><a href="#">Privacy Policy</a></li>--}}
+{{--                                <li><a href="#">Terms & Condition</a></li>--}}
+{{--                                <li><a href="#">Pricing Of Filmcity</a></li>--}}
                             </ul>
                         </div>
                     </div>
@@ -86,7 +86,7 @@
             <div class="col-md-12">
                 <div class="footer-bottom">
                     <div class="footer-left">
-                        <p>Copyright © <a href="#">Ftage</a>. All Right Reserved.</p>
+{{--                        <p>Copyright © <a href="#">Ftage</a>. All Right Reserved.</p>--}}
                     </div>
                     <div class="footer-right-social f-right">
                         <ul>

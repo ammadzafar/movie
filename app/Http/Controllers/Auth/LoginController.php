@@ -29,7 +29,7 @@ class LoginController extends Controller
     protected $redirectTo = '/home';
     public function redirectPath()
     {
-        return Auth::user()->isAdmin() ? 'banner/create' : '/';
+        return Auth::user()->isAdmin() ? 'banner/index' : '/';
     }
 
     /**

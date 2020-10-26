@@ -8,8 +8,15 @@
                     <!-- Logo Area Start -->
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="logo-img">
-                            <a href="index.html"><img src="{{asset('asset/img/home-one/icon/logo.png')}}" alt=""></a>
+                            <a href="{{route('create.banner')}}"><img src="{{asset('asset/img/home-one/icon/logo.png')}}" alt=""></a>
                         </div>
+                    </div>
+                    <div class="logout-btns">
+                        @if(auth()->check())
+                            <a href="{{route('logout')}}" class="logout-btn" style="float: left; color: white; font-size: 18px; margin-left: 680px;margin-top: 12px;">Logout</a>
+                        @else
+                            <a href="{{route('register')}}" class="logout-btn" style="float: left; color: white; font-size: 18px; margin-left: 680px;margin-top: 12px;">Logout</a>
+                        @endif
                     </div>
                     <!-- Logo Area End -->
                 </div>
@@ -24,11 +31,9 @@
                         <div class="bradcamb-content text-center text-white text-uppercase">
                             <h1>MOVIE DETAILS</h1>
                             <ul>
-                                <li><a href="{{route('create.banner')}}">HOME<span>/</span></a></li>
-                                <li><a href="#">banner<span>/</span></a></li>
-                                <li><a href="{{route('create.movie')}}">CREATE MOVIE <span>/</span></a></li>
-                                <li><a href="{{route('create.categories')}}">CREATE CATEGORY</a></li>
-
+                                <li><a href="{{route('banner.index')}}">BANNER<span>/</span></a></li>
+                                <li><a href="{{route('movie.index')}}"> MOVIE <span>/</span></a></li>
+                                <li><a href="{{route('categories.index')}}">CATEGORIES<span></span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -73,28 +78,6 @@
                         <label style="width: 100%;">Link</label>
                         <input type="url" name="image_url" placeholder="image link" >
                     </div>
-
-                    <div class="form-group radio-buttons2" style="width: 100%; float: left;">
-                        <label><b>Video</b></label>
-                        <div class="at-radio" style="float: right;">
-                            <input type="radio" id="radio4" name="radio" style="float: left; width: auto; height: auto; margin: 4px 10px 4px 0; ">
-                            <label for="radio4"  style="float: left; width: auto;cursor: pointer;">link</label>
-                        </div>
-                        <div class="at-radio" style="float: right; padding: 0 20px 0 0;">
-                            <input type="radio" id="radio3" name="radio" style="float: left; width: auto; height: auto; margin: 4px 10px 4px 0;">
-                            <label for="radio3"  style="float: left; width: auto;cursor: pointer;">Video</label>
-                        </div>
-                    </div>
-
-                    <div class="form-group video-radio" style="display: none">
-                        <label style="width: 100%;">Video</label>
-                        <input type="file" name="video_url" >
-                    </div>
-                    <div class="form-group link2-radio"style="display: none">
-                        <label style="width: 100%;">Link</label>
-                        <input type="url" name="video_url" placeholder="video link" >
-                    </div>
-
                     <div class="form-group float-left w-100">
                         <button type="submit" style="background: #E2A750; padding: 10px 20px; border: 0; border-radius: 5px;">submit</button>
                     </div>
@@ -130,3 +113,4 @@
 
     </script>
 @endsection
+

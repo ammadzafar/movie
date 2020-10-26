@@ -24,9 +24,9 @@
                         <div class="bradcamb-content text-center text-white text-uppercase">
                             <h1>CATEGORIES</h1>
                             <ul>
-                                <li><a href="{{route('create.banner')}}">HOME<span>/</span></a></li>
-                                <li><a href="#">CATEGORIES<span>/</span></a></li>
-                                <li><a href="{{route('create.movie')}}">CREATE MOVIE <span></span></a></li>
+                                <li><a href="{{route('banner.index')}}">BANNER<span>/</span></a></li>
+                                <li><a href="{{route('movie.index')}}"> MOVIE <span>/</span></a></li>
+                                <li><a href="{{route('categories.index')}}">CATEGORIES<span></span></a></li>
                             </ul>
                         </div>
                     </div>

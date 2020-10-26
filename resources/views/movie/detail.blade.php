@@ -13,6 +13,11 @@
                         </div>
                     </div>
                     <!-- Logo Area End -->
+                    <div class="logout-btns">
+                        @if(auth()->check())
+                            <a href="{{route('logout')}}" class="logout-btn" style="float: left; color: white; font-size: 18px; margin-left: 680px;margin-top: 12px;">Logout</a>
+                        @endif
+                    </div>
                 </div>
             </div>
         </div>
@@ -25,7 +30,7 @@
                         <div class="bradcamb-content text-center text-white text-uppercase">
                             <h1>MOVIE DETAILS</h1>
                             <ul>
-                                <li><a href="index.html">HOME <span>/</span></a></li>
+                                <li><a href="{{route('movie.home')}}">HOME <span>/</span></a></li>
                                 <li>MOVIE DETAIL</li>
                             </ul>
                         </div>
@@ -55,15 +60,14 @@
                             <ul>
                                 <li>{{$movie->release_date}} -</li>
                                 @foreach($movie->categories as $category)
-                                <li>{{$category->name}}-</li>
+                                <li>{{$category->name}}</li>
                                 @endforeach
-                                <li>{{$movie->length}}</li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-lg-7">
                         <div class="movie-details-info">
-                            <p>{{$movie->description}}</p>
+                            <p>{!! $movie->description !!}</p>
                         </div>
                     </div>
                     <div class="col-lg-5">
@@ -85,24 +89,6 @@
                                 <li><a href="#"><i class="icofont icofont-google-plus"></i></a></li>
                                 <li><a href="#"><i class="icofont icofont-instagram"></i></a></li>
                                 <li><a href="#"><i class="icofont icofont-vimeo"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="movie-details-info">
-                            <ul>
-                                <li><span>INITIAL RELEASE : </span> {{$movie->release_date}}</li>
-                                <li><span>DIRECTOR : </span> {{$movie->director}}</li>
-                                <li><span>LANGUAGE : </span> {{$movie->language}}</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="movie-details-info">
-                            <ul class="border-none">
-                                <li><span>LENGTH :</span> {{$movie->length}}</li>
-                                <li><span>CAST :</span> {{$movie->cast}}</li>
-                                <li><span>IMDb :</span> 7.4/10</li>
                             </ul>
                         </div>
                     </div>
@@ -129,10 +115,10 @@
                         @foreach($movies as $recent_movie)
                             <div class="trailer-single">
                                 <div class="trailer-img">
-                                    <img src="{{asset('uploads/movies/images/'.$recent_movie->poster)}}" alt="">
-                                    <a href="www.youtube.com/watch1e86?v=TLnmb07WQ-s" class="popup-youtube">
-                                        <i class="icofont icofont-play-alt-2"></i>
-                                    </a>
+                                    <img src="{{asset('uploads/movies/images/'.$recent_movie->banner)}}" alt="">
+{{--                                    <a href="www.youtube.com/watch1e86?v=TLnmb07WQ-s" class="popup-youtube">--}}
+{{--                                        <i class="icofont icofont-play-alt-2"></i>--}}
+{{--                                    </a>--}}
                                 </div>
                                 <div class="trailer-titel">
                                     <h5><a href="{{route('movie.detail',['id'=> $recent_movie->id ])}}">{{$recent_movie->name}}</a> <span></span> </h5>

@@ -11,6 +11,8 @@
 <script src="{{asset('asset/js/main.js')}}"></script>
 <!-- Sweet Alert -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="{{asset('asset/js/tinymce/jquery.tinymce.min.js?')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.5.6/tinymce.min.js"></script>
 <script src="{{asset('asset/js/select2.min.js?')}}"></script>
 <!-- jQuery and JS bundle w/ Popper.js -->
 <script>

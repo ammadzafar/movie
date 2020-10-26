@@ -13,37 +13,26 @@
                         </div>
                     </div>
                     <!-- Logo Area End -->
+                    <div class="logout-btns">
+                        @if(auth()->check())
+                            <a href="{{route('logout')}}" class="logout-btn" style="float: left; color: white; font-size: 18px; margin-left: 680px;margin-top: 12px;">Logout</a>
+{{--                        @else--}}
+{{--                            <a href="{{route('register')}}" class="logout-btn" style="float: left; color: white; font-size: 18px; margin-left: 680px;margin-top: 12px;">Logout</a>--}}
+                        @endif
+                    </div>
                     <!-- Menu Area Start -->
                     <!-- Header Menu Area Start -->
                 </div>
             </div>
         </div>
-        <!-- Header Menu Area Start -->
-        <!-- Slider Area Start -->
-{{--        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">--}}
-{{--            <div class="carousel-inner">--}}
-{{--                @foreach($banners->take(3) as $banner)--}}
-{{--                <div class="carousel-item active">--}}
-{{--                    <img src="{{asset('uploads/images/'.$banner->image_url)}}" class="d-block w-100" alt="...">--}}
-{{--                </div>--}}
-{{--                    @endforeach--}}
-{{--            </div>--}}
-{{--            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">--}}
-{{--                <span class="carousel-control-prev-icon" aria-hidden="true"></span>--}}
-{{--                <span class="sr-only">Previous</span>--}}
-{{--            </a>--}}
-{{--            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">--}}
-{{--                <span class="carousel-control-next-icon" aria-hidden="true"></span>--}}
-{{--                <span class="sr-only">Next</span>--}}
-{{--            </a>--}}
-{{--        </div>--}}
+
         <div class="slider-area">
             <div class="slider-active owl-carousel owl-theme">
                 <!-- Slider Single -->
                 @foreach($banners->take(3) as $banner)
                 <div class="slider-item fullscreen single-banner">
                     <div class="youtube-video-wrapper" data-black-overlay="6">
-                        <div class="youtube-bg" style="background-image: url({{\Illuminate\Support\Facades\URL::asset('uploads/images/2-2.jpg'/*.$banner->image_url*/)}});" data-property="{videoURL:'{{\Illuminate\Support\Facades\URL::asset('uploads/videos/Ask-28243.mp4')}}',containment:'self',showControls:false,startAt:0,mute:true,autoPlay:true,loop:true,opacity:1,showYTLogo:false,optimizeDisplay:true}"></div>
+                        <div class="youtube-bg" style="background-image: url({{$banner->image_url}});" data-property="{videoURL:'{{\Illuminate\Support\Facades\URL::asset('uploads/videos/Ask-28243.mp4')}}',containment:'self',showControls:false,startAt:0,mute:true,autoPlay:true,loop:true,opacity:1,showYTLogo:false,optimizeDisplay:true}"></div>
                     </div>
                     <div class="container">
                         <div class="row">
@@ -83,7 +72,7 @@
                         @foreach($movies as $movie)
                         <div class="trailer-single">
                             <div class="trailer-img">
-                                <img src="{{asset('uploads/movies/images/'.$movie->poster)}}" alt="">
+                                <img src="{{asset('uploads/movies/images/'.$movie->banner)}}" alt="">
 {{--                                <a href="www.youtube.com/watch1e86?v=TLnmb07WQ-s" class="popup-youtube">--}}
 {{--                                    <i class="icofont icofont-play-alt-2"></i>--}}
 {{--                                </a>--}}

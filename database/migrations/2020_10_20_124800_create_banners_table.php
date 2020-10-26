@@ -17,7 +17,6 @@ class CreateBannersTable extends Migration
             $table->uuid('id')->primary();
             $table->string('name');
             $table->string('text');
-            $table->string('video_url')->nullable();
             $table->string('image_url')->nullable();
             $table->timestamps();
         });
