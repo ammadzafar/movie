@@ -12,7 +12,7 @@ class HomeController extends Controller
     {
         $banners = Banner::all();
         $movies = Movie::all();
-        dd($movies);
+//        dd($movies);
         return view('movie.home',compact('banners','movies'));
     }
     public function detail($id)
