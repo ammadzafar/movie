@@ -69,10 +69,10 @@
                 <div class="main-section">
                     <div class="recent-upload-active owl-carousel owl-theme">
                         <!-- Single Item -->
-                        @foreach($movies as $movie)
+                    @foreach($movies as $movie)
                         <div class="trailer-single">
                             <div class="trailer-img">
-                                <img src="{{asset('uploads/movies/images/'.$movie->banner)}}" alt="">
+                                <img src="{{$movie->b.anner}}" alt="">
 {{--                                <a href="www.youtube.com/watch1e86?v=TLnmb07WQ-s" class="popup-youtube">--}}
 {{--                                    <i class="icofont icofont-play-alt-2"></i>--}}
 {{--                                </a>--}}
