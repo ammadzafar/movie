@@ -72,7 +72,7 @@
                     @foreach($movies as $movie)
                         <div class="trailer-single">
                             <div class="trailer-img">
-                                <img src="{{$movie->b.anner}}" alt="">
+                                <img src="{{$movie->banner}}" alt="">
 {{--                                <a href="www.youtube.com/watch1e86?v=TLnmb07WQ-s" class="popup-youtube">--}}
 {{--                                    <i class="icofont icofont-play-alt-2"></i>--}}
 {{--                                </a>--}}
