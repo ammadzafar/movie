@@ -50,7 +50,7 @@
                     <div class="col-lg-12 col-md-12 col-sm-12">
                         <div class="movie-details-content">
                             <div class="movie-details-image mb-40">
-                                <img src="{{asset('uploads/movies/images/'.$movie->banner)}}" alt="">
+                                <img src="{{($movie->banner)}}" alt="">
                             </div>
                         </div>
                     </div>
@@ -80,18 +80,18 @@
                         </div>
                         <h5 class="trailer-title">MOVIE TRAILER : {{$movie->name}}</h5>
                     </div>
-                    <div class="col-md-12">
-                        <div class="post-share">
-                            <h6>Share:</h6>
-                            <ul>
-                                <li><a href="#"><i class="icofont icofont-facebook"></i></a></li>
-                                <li><a href="#"><i class="icofont icofont-twitter"></i></a></li>
-                                <li><a href="#"><i class="icofont icofont-google-plus"></i></a></li>
-                                <li><a href="#"><i class="icofont icofont-instagram"></i></a></li>
-                                <li><a href="#"><i class="icofont icofont-vimeo"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
+{{--                    <div class="col-md-12">--}}
+{{--                        <div class="post-share">--}}
+{{--                            <h6>Share:</h6>--}}
+{{--                            <ul>--}}
+{{--                                <li><a href="#"><i class="icofont icofont-facebook"></i></a></li>--}}
+{{--                                <li><a href="#"><i class="icofont icofont-twitter"></i></a></li>--}}
+{{--                                <li><a href="#"><i class="icofont icofont-google-plus"></i></a></li>--}}
+{{--                                <li><a href="#"><i class="icofont icofont-instagram"></i></a></li>--}}
+{{--                                <li><a href="#"><i class="icofont icofont-vimeo"></i></a></li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                 </div>
             </div>
         </div>
@@ -115,7 +115,7 @@
                         @foreach($movies as $recent_movie)
                             <div class="trailer-single">
                                 <div class="trailer-img">
-                                    <img src="{{asset('uploads/movies/images/'.$recent_movie->banner)}}" alt="">
+                                    <img src="{{($recent_movie->banner)}}" alt="">
 {{--                                    <a href="www.youtube.com/watch1e86?v=TLnmb07WQ-s" class="popup-youtube">--}}
 {{--                                        <i class="icofont icofont-play-alt-2"></i>--}}
 {{--                                    </a>--}}
