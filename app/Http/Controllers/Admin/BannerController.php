@@ -39,20 +39,10 @@ class BannerController extends Controller
     public function delete($id)
     {
         try {
-            if (env('IMAGE_STORAGE') == 'cloud')
-            {
-                $file = Banner::findorfail($id);
-                if (file_exists('http://res.cloudinary.com/dalguidsd/image/upload/'.$file))
-                {
-                    Cloudder::destroyImage($id);
-                    $file->delete();
-                }
-            }
-            else
-                {
                     $banner = Banner::findorfail($id);
+                    Cloudder::destroyImage($id);
                     $banner->delete();
-                }
+
             return redirect()->route('banner.index')->with('success','Banner Deleted Successfully');
         }
         catch (\Exception $e)
