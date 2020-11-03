@@ -22,7 +22,7 @@ trait ImageUpload {
             }
 
             $imageUrl = Cloudder::getResult()['url'];
-            $publicId = Cloudder::getResult()['publicId'];
+            $public_id = Cloudder::getResult()['publicId'];
         }
         else{
             $name = time().'.'.$image->getClientOriginalExtension();
@@ -30,6 +30,6 @@ trait ImageUpload {
             $image->move($destinationPath, $name);
             $imageUrl =asset($path) .'/'.$name;
         }
-        return  ['imageUrl' => $imageUrl,'publicId' => $publicId];
+        return  ['imageUrl' => $imageUrl,'public_id' => $public_id];
     }
 }
