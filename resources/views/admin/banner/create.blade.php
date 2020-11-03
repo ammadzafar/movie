@@ -54,6 +54,9 @@
                         <label>Name</label>
                         <input type="text" name="name" placeholder="banner name">
                     </div>
+{{--                    <div class="form-group">--}}
+{{--                        <input type="text" name="public_id" value="" style="display: none">--}}
+{{--                    </div>--}}
                     <div class="form-group">
                         <label>Content</label>
                         <textarea name="text" placeholder="banner content"></textarea>

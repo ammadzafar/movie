@@ -21,7 +21,7 @@ class BannerServices
         if($request->hasFile('image_url')){
             $response = $this->upload($request->file('image_url'),'uploads/banners');
             $banner->image_url = $request['imageUrl'];
-            $banner->public_id = $request['publicId'];
+            $banner->public_id = $request['public_id'];
         }else{
             $banner->image_url = $request->image_url;
         }
