@@ -45,6 +45,7 @@ class BannerController extends Controller
                 if (file_exists('http://res.cloudinary.com/dalguidsd/image/upload/'.$file))
                 {
                     Cloudder::destroyImage($id);
+                    $file->delete();
                 }
             }
             else
