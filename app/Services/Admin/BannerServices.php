@@ -27,7 +27,7 @@ class BannerServices
         }else{
             $banner->image_url = $request->image_url;
         }
-        dd($banner);
+//        dd($banner);
         $banner->save();
     }
 }
