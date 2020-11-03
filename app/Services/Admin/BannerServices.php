@@ -13,18 +13,21 @@ use JD\Cloudder\Facades\Cloudder;
 class BannerServices
 {
     use ImageUpload;
+
     public function storeBanner(Request $request)
     {
+
         $banner = new Banner();
         $banner->name = $request->name;
         $banner->text = $request->text;
         if($request->hasFile('image_url')){
             $response = $this->upload($request->file('image_url'),'uploads/banners');
-            $banner->image_url = $request['imageUrl'];
-            $banner->publicId = $request['publicId'];
+            $banner->image_url = $response['imageUrl'];
+            $banner->publicId = $response['publicId'];
         }else{
             $banner->image_url = $request->image_url;
         }
+        dd($banner);
         $banner->save();
     }
 }
