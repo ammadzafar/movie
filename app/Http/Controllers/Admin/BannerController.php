@@ -40,8 +40,8 @@ class BannerController extends Controller
     {
         try {
                     $banner = Banner::findorfail($id);
-                    if($banner->public_id){
-                        Cloudder::destroyImage($banner->public_id);
+                    if($banner->publicId){
+                        Cloudder::destroyImage($banner->publicId);
                     }
                     $banner->delete();
 
