@@ -6,6 +6,7 @@ use App\Model\Banner;
 use App\Services\Admin\BannerServices;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use JD\Cloudder\Facades\Cloudder;
 
 class BannerController extends Controller
 {
@@ -38,8 +39,9 @@ class BannerController extends Controller
     public function delete($id)
     {
         try {
-            $banner = Banner::findorfail($id);
-            $banner->delete();
+//            $banner = Banner::findorfail($id);
+//            $banner->delete();
+            Cloudder::destroyImage($id);
             return redirect()->route('banner.index')->with('success','Banner Deleted Successfully');
         }
         catch (\Exception $e)
