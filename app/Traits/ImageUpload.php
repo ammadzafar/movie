@@ -20,9 +20,9 @@ trait ImageUpload {
             }else{
                 Cloudder::upload($image);
             }
-
+//            dd(Cloudder::getResult()['public_id']);
             $imageUrl = Cloudder::getResult()['url'];
-            $publicId = Cloudder::getResult()['publicId'];
+            $publicId = Cloudder::getResult()['public_id'];
         }
         else{
             $name = time().'.'.$image->getClientOriginalExtension();
