@@ -13,7 +13,7 @@ trait ImageUpload {
      * @return mixed
      */
     public function upload($image, $path){
-        $publicId = null;
+        $public_id = null;
         if(env('IMAGE_STORAGE') == 'cloud'){
             if (strpos($image->getMimeType(), 'video') !== false) {
                 Cloudder::uploadVideo($image);
