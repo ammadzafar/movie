@@ -14,7 +14,7 @@ class AddPublicIdToBannersTable extends Migration
     public function up()
     {
         Schema::table('banners', function (Blueprint $table) {
-            $table->string('public_id')->after('text')->nullable();
+            $table->string('publicId')->after('text')->nullable();
         });
     }
 
@@ -26,7 +26,7 @@ class AddPublicIdToBannersTable extends Migration
     public function down()
     {
         Schema::table('banners', function (Blueprint $table) {
-            $table->dropColumn('public_id');
+            $table->dropColumn('publicId');
         });
     }
 }
