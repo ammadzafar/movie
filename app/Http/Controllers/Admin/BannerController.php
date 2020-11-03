@@ -39,9 +39,9 @@ class BannerController extends Controller
     public function delete($id)
     {
         try {
-//            $banner = Banner::findorfail($id);
-//            $banner->delete();
-            Cloudder::destroyImage($id);
+            $banner = Banner::findorfail($id);
+            $banner->delete();
+//            Cloudder::destroyImage($id);
             return redirect()->route('banner.index')->with('success','Banner Deleted Successfully');
         }
         catch (\Exception $e)
