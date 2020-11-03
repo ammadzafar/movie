@@ -40,7 +40,9 @@ class BannerController extends Controller
     {
         try {
                     $banner = Banner::findorfail($id);
-                    Cloudder::destroyImage($id);
+                    if($banner->publicId){
+                        Cloudder::destroyImage($banner->publicId);
+                    }
                     $banner->delete();
 
             return redirect()->route('banner.index')->with('success','Banner Deleted Successfully');

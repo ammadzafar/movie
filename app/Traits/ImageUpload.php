@@ -13,6 +13,7 @@ trait ImageUpload {
      * @return mixed
      */
     public function upload($image, $path){
+        $publicId = null;
         if(env('IMAGE_STORAGE') == 'cloud'){
             if (strpos($image->getMimeType(), 'video') !== false) {
                 Cloudder::uploadVideo($image);
@@ -21,6 +22,7 @@ trait ImageUpload {
             }
 
             $imageUrl = Cloudder::getResult()['url'];
+            $publicId = Cloudder::getResult()['publicId'];
         }
         else{
             $name = time().'.'.$image->getClientOriginalExtension();
@@ -28,6 +30,6 @@ trait ImageUpload {
             $image->move($destinationPath, $name);
             $imageUrl =asset($path) .'/'.$name;
         }
-        return  $imageUrl;
+        return  ['imageUrl' => $imageUrl,'publicId' => $publicId];
     }
 }

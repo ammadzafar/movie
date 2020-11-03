@@ -18,7 +18,13 @@ class BannerServices
         $banner = new Banner();
         $banner->name = $request->name;
         $banner->text = $request->text;
-        $banner->image_url = $request->hasFile('image_url') ? $this->upload($request->file('image_url'), 'uploads/banners') : $request->image_url;
+        if($request->hasFile('image_url')){
+            $response = $this->upload($request->file('image_url'));
+            $banner->image_url = $request['imageUrl'];
+            $banner->publicId = $request['publicId'];
+        }else{
+            $banner->image_url = $request->image_url;
+        }
         $banner->save();
     }
 }
