@@ -20,7 +20,7 @@ trait ImageUpload {
             }else{
                 Cloudder::upload($image);
             }
-            dd(Cloudder::getResult()['public_id']);
+            dd(Cloudder::getResult());
 
             $imageUrl = Cloudder::getResult()['url'];
             $publicId = Cloudder::getResult()['public_id'];
